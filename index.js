@@ -101,13 +101,13 @@ client.on('messageCreate', (message) => {
 		let newObj = {
 			diaDaSemana: diaDeTreinoAtual,
 			treino: trainingSchema[diaDeTreinoAtual],
-			data: `${dia}/${mes}/${ano}`
+			data: dataAtual
 		}
 
 		let strModel = `Esse foi o seu treino de hoje:`;
 
 		for (let exercicios in treinoAtual) {
-			strModel += `\n${exercicios}:`;
+			strModel += `\n**${exercicios}:**`;
 
 			for (let i = 0; i < treinoAtual[exercicios]['repeticoes'].length; i++) {
 				strModel += `\n${i + 1}. ${treinoAtual[exercicios]['repeticoes'][i]} reps, ${treinoAtual[exercicios]['peso'][i]}kg,`;
